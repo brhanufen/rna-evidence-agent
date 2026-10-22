@@ -1,0 +1,85 @@
+{
+  "video": "RNA_Evidence_Agent_Nightshift_Demo_Teaching.mp4",
+  "seconds": 192.4,
+  "speech_rate_wpm": 120,
+  "timing": "Single continuous PCM track, frame-aligned image durations, 0.4-second lead-in, 0.65-second paragraph pauses and at least 1.8-second reading pause per scene",
+  "scene_timeline": [
+    {
+      "scene": 1,
+      "image": "slide-1.png",
+      "starts_at_seconds": 0.0,
+      "speech_starts_at_seconds": 0.4,
+      "speech_ends_at_seconds": 19.21,
+      "changes_at_seconds": 21.033,
+      "reading_pause_seconds": 1.8
+    },
+    {
+      "scene": 2,
+      "image": "recorded-nightshift-explanation.png",
+      "starts_at_seconds": 21.033,
+      "speech_starts_at_seconds": 21.433,
+      "speech_ends_at_seconds": 42.693,
+      "changes_at_seconds": 44.5,
+      "reading_pause_seconds": 1.8
+    },
+    {
+      "scene": 3,
+      "image": "computed-pairs.png",
+      "starts_at_seconds": 44.5,
+      "speech_starts_at_seconds": 44.9,
+      "speech_ends_at_seconds": 62.279,
+      "changes_at_seconds": 64.1,
+      "reading_pause_seconds": 1.8
+    },
+    {
+      "scene": 4,
+      "image": "computed-trace.png",
+      "starts_at_seconds": 64.1,
+      "speech_starts_at_seconds": 64.5,
+      "speech_ends_at_seconds": 87.35,
+      "changes_at_seconds": 89.167,
+      "reading_pause_seconds": 1.8
+    },
+    {
+      "scene": 5,
+      "image": "computed-block.png",
+      "starts_at_seconds": 89.167,
+      "speech_starts_at_seconds": 89.567,
+      "speech_ends_at_seconds": 109.34,
+      "changes_at_seconds": 111.167,
+      "reading_pause_seconds": 1.8
+    },
+    {
+      "scene": 6,
+      "image": "slide-4.png",
+      "starts_at_seconds": 111.167,
+      "speech_starts_at_seconds": 111.567,
+      "speech_ends_at_seconds": 133.684,
+      "changes_at_seconds": 135.5,
+      "reading_pause_seconds": 1.8
+    },
+    {
+      "scene": 7,
+      "image": "slide-6.png",
+      "starts_at_seconds": 135.5,
+      "speech_starts_at_seconds": 135.9,
+      "speech_ends_at_seconds": 161.784,
+      "changes_at_seconds": 163.6,
+      "reading_pause_seconds": 1.8
+    },
+    {
+      "scene": 8,
+      "image": "slide-7.png",
+      "starts_at_seconds": 163.6,
+      "speech_starts_at_seconds": 164.0,
+      "speech_ends_at_seconds": 190.584,
+      "changes_at_seconds": 192.4,
+      "reading_pause_seconds": 1.8
+    }
+  ],
+  "format": "Narrated playback of computed JSON report panels and slides, not a screen capture or fresh live run",
+  "voice": "macOS system speech synthesis",
+  "controlled_cases": "original, mismatched ID, reversed rows, unbalanced pairing",
+  "model_run": "Recorded nightshift_design_01; no model calls in deterministic controlled cases; full Nightshift code-execution loop remains unsupported",
+  "full_decode": "passed"
+}

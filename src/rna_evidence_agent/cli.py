@@ -14,25 +14,35 @@ def main():
     parser.add_argument('--memory-dir',type=Path,default=Path('state'))
     parser.add_argument('--baseline',type=Path,required=True,help='Declared pre-existing RNA-seq Agent checkout')
     parser.add_argument('--source-manifest',type=Path,help='Optional Zetaris provenance manifest to copy into the run')
-    parser.add_argument('--backend',choices=['codex','anthropic'],default='codex')
-    parser.add_argument('--model',help='Required only for an explicitly selected Anthropic backend')
+    parser.add_argument('--backend',choices=['nightshift','codex','anthropic'],default='nightshift')
+    parser.add_argument('--model',help='Nightshift routing mode, or required Anthropic model when selected')
     parser.add_argument('--question',required=True)
     parser.add_argument('--review-pairing',action='store_true',help='Inspect paired design and stop for unresolved researcher confirmation before model calls')
     parser.add_argument('--design-factor',default='cell_line')
+    parser.add_argument('--explain-review',action='store_true',help='Ask Nightshift to explain computed design checks; prose never authorizes analysis')
     args=parser.parse_args()
     if args.backend=='anthropic' and (not args.model or not os.environ.get('ANTHROPIC_API_KEY')):
         parser.error('Configure ANTHROPIC_API_KEY securely in the environment; do not paste it into chat or files')
+    if args.explain_review and not args.review_pairing:
+        parser.error('--explain-review requires --review-pairing')
     if args.review_pairing:
         import json
         from .design_review import review_design
         design=review_design(args.counts,args.metadata,args.run_dir,factor=args.design_factor)
         print(json.dumps(design,indent=2))
+        if args.explain_review:
+            from .nightshift_explain import explain_design
+            print(json.dumps(explain_design(design,args.run_dir,model=args.model),indent=2))
         return
     baseline=args.baseline.resolve()
     if not (baseline/'src/rnaseq_agent/agent.py').is_file():
         parser.error('Baseline checkout is missing the expected agent module')
     sys.path.insert(0,str(baseline/'src'))
-    if args.backend=='codex':
+    if args.backend=='nightshift':
+        from .nightshift_backend import NightshiftBackend
+        backend=NightshiftBackend(model=args.model)
+        backend.discover()
+    elif args.backend=='codex':
         from .codex_backend import CodexBackend
         backend=CodexBackend()
     else:

@@ -20,6 +20,13 @@ def render():
             cards+='<p>'+html.escape(item.get('question',item.get('reason','')))+'</p>'
             cards+='<pre>'+html.escape(json.dumps(item['decision_trace'],indent=2))+'</pre></details>'
         cards+='</section>'
+    nightshift_path=ROOT/'output_examples/nightshift_design_01.json'
+    if nightshift_path.exists():
+        explanation=json.loads(nightshift_path.read_text())
+        receipt=explanation.get('provider_receipt', {})
+        cards+='<section id="nightshift"><h2>Nightshift: explain the computed decision</h2><p>Recorded local model request; the computed decision remains authoritative. Model prose is unreviewed and cannot authorize analysis.</p>'
+        cards+='<p>Reported model: '+html.escape(str(explanation.get('reported_model')))+'</p><p class="answer">'+html.escape(explanation['explanation'])+'</p>'
+        cards+='<p>Decision: '+html.escape(explanation['authoritative_decision'])+'</p><details><summary>Provider receipt</summary><pre>'+html.escape(json.dumps(receipt,indent=2))+'</pre></details></section>'
     nav='<a href="#design-review">Paired-design decision</a>'+''.join('<a href="#'+html.escape(run_id,quote=True)+'">'+html.escape(title)+'</a>' for run_id,title in RUNS.items())
     for run_id,title in RUNS.items():
         folder=ROOT/'runs'/run_id;path=folder/'transcript.json'
@@ -43,7 +50,7 @@ def render():
         cards+='<section id="'+html.escape(run_id,quote=True)+'"><h2>'+html.escape(title)+'</h2><p class="meta">'+summary+'</p><p class="answer">'+html.escape(result['final_answer'])+'</p>'+images+'<details><summary>Inspect evidence references</summary><p>Output linkage does not establish scientific correctness.</p><table><thead><tr><th>Claim</th><th>Printed evidence</th><th>Reference status</th></tr></thead><tbody>'+rows+'</tbody></table></details></section>'
     return '''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Recorded execution viewer</title><style>
 body{font:16px system-ui;background:#101c29;color:#e8eef5;max-width:1100px;margin:44px auto;padding:24px}h1{font-size:44px;margin:8px 0}header p,.meta,footer{color:#a6c1cf}section{background:#1c2d3d;padding:26px;border-radius:14px;margin:20px 0}h2{color:#64d4be}p{line-height:1.65}.answer{white-space:pre-wrap}img{display:block;width:100%;max-width:900px;background:white;border-radius:8px;margin:20px 0}details{margin-top:22px}summary{cursor:pointer;color:#64d4be}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:12px;border-bottom:1px solid #3b5368;text-align:left;overflow-wrap:anywhere}footer{line-height:1.6;margin:30px 0}.banner{padding:14px;border:1px solid #3b5368;border-radius:10px}nav{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0}nav a{color:#64d4be}
-</style></head><body><header><p>OPEN AGENT HACKATHON · SOLO PROJECT</p><h1>Recorded execution viewer</h1><p>Recompute results. Keep the evidence. Inspect the assumptions.</p></header><nav>'''+nav+'''</nav><p class="banner">Recorded Codex-backed examples on public RNA data exported through Zetaris. This viewer is read-only. It does not trigger analysis or expose a model account.</p>'''+cards+'''<footer>Pre-existing RNA-seq Agent declared. New work connects Zetaris data, Meterless H-MEM, evidence manifests and this viewer. Research prototype; no clinical conclusions. One-off demonstrations are not a reliability benchmark. Cursor contributed the viewer labeling and navigation. Final submission remains pending.</footer></body></html>'''
+</style></head><body><header><p>OPEN AGENT HACKATHON · SOLO PROJECT</p><h1>Recorded execution viewer</h1><p>Recompute results. Keep the evidence. Inspect the assumptions.</p></header><nav>'''+nav+'''</nav><p class="banner">Recorded Nightshift explanation and historical Codex-backed examples on public RNA data exported through Zetaris. This viewer is read-only. It does not trigger analysis or expose a model account.</p>'''+cards+'''<footer>Pre-existing RNA-seq Agent declared. New work connects Zetaris data, Meterless H-MEM, evidence manifests and this viewer. Research prototype; no clinical conclusions. One-off demonstrations are not a reliability benchmark. Cursor contributed the viewer labeling and navigation. The earlier entry was submitted; these Nightshift additions have not yet been uploaded to the submission.</footer></body></html>'''
 
 class Dashboard(BaseHTTPRequestHandler):
     def do_GET(self):

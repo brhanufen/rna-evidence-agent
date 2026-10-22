@@ -1,0 +1,341 @@
+{
+  "kind": "nightshift-design-explanation",
+  "dataset_sha256": "dd9a74a68083b723f691e74cfc22c4a74d8aa495b61748574db9afa21210031d",
+  "authoritative_decision": "needs-researcher-confirmation",
+  "explanation": "1. The computed checks confirm that the sample identifiers match, ensuring alignment between files, though this alone does not prove biological pairing and is insufficient for differential expression analysis.\n2. While the study meets the metadata balance requirement, indicating one sample per condition within each cell line level, the researcher confirmation is still required to validate the biological pairing before conducting differential expression analyses.",
+  "explanation_status": "unreviewed model prose",
+  "may_authorize_analysis": false,
+  "requested_route": "meterless/local",
+  "reported_model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+  "request_sha256": "465f19515ed400140a0803bf7a1bada8f2c27b4987d3dd92b05e127d20b62a91",
+  "response_sha256": "7af5f75437ec884ae085b083f89c8dea518b575f0a807563d385c94cbd77248e",
+  "usage": {
+    "prompt_tokens": 1017,
+    "completion_tokens": 137,
+    "total_tokens": 1154
+  },
+  "provider_receipt": {
+    "schema": "meterless.compute_receipt.v1",
+    "receipt_id": "rcpt_req_ewheo8vw",
+    "request_id": "req_ewheo8vw",
+    "decision_id": "req_ewheo8vw",
+    "created_at": 1792700482087,
+    "status": "ok",
+    "app": "rna-evidence-agent",
+    "requested_mode": "meterless/local",
+    "prompt_preview": "Explain the following computed checks in two short sentences. Matching IDs means alignment between files only; it does NOT prove biological pairing. Metadata balance does NOT prove",
+    "winning_route": {
+      "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+      "label": "Qwen 2.5 3B (this device)",
+      "provider": "webllm",
+      "kind": "local",
+      "tier": "A"
+    },
+    "phases": [
+      {
+        "phase": "planning",
+        "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+        "ms": 18676,
+        "tokensIn": 313,
+        "tokensOut": 72,
+        "outputTps": 3.8552152495180985,
+        "coherence": 0.48,
+        "tier": "A",
+        "reflex_decided_in_ms": 0
+      },
+      {
+        "phase": "moa_synthesis",
+        "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+        "ms": 11111,
+        "tokensIn": 704,
+        "tokensOut": 65,
+        "outputTps": 5.850058500585005,
+        "coherence": 0.48,
+        "tier": "A"
+      }
+    ],
+    "usage": {
+      "input_tokens": 1017,
+      "output_tokens": 137,
+      "total_tokens": 1154,
+      "output_tps": 4.59932185181455,
+      "latency_ms": 29787
+    },
+    "cost": {
+      "actual_usd": 0,
+      "naive_usd": 0.005105999999999999,
+      "baseline": {
+        "model": "claude-sonnet-4-5-20250929",
+        "label": "Claude 4.5 Sonnet",
+        "source": "fixed-reference"
+      },
+      "verifier_usd": 0,
+      "race_overhead_usd": 0
+    },
+    "savings": {
+      "amount": 0.005105999999999999,
+      "currency": "USD",
+      "vs": "Claude 4.5 Sonnet",
+      "baseline_source": "fixed-reference"
+    },
+    "cache": {
+      "status": "miss",
+      "losers_reclaimed": 2,
+      "partials_reclaimed": 0
+    },
+    "privacy": {
+      "path": "local-only",
+      "redaction": {
+        "applied": false,
+        "spans": 0
+      }
+    },
+    "cross_check": {
+      "status": "skipped",
+      "risk_level": "low",
+      "verifier": "none",
+      "reflex_ms": 0,
+      "verifier_ms": 0,
+      "verifier_ran": false,
+      "verifier_model": null,
+      "verifier_verdict": null,
+      "checks": [],
+      "recommended_action": "allow",
+      "blocking": false,
+      "app": "rna-evidence-agent",
+      "skip_reason": "tier_a_chat"
+    },
+    "consensus": {
+      "level": "agreed",
+      "tone": "green",
+      "label": "models agreed",
+      "detail": "3 of 3 models agreed \u2014 safe to trust the cheap answer",
+      "raced": 3,
+      "agree": 3,
+      "coherence": 0.48,
+      "verified": null
+    },
+    "consensus_escalation": null,
+    "fusion": null,
+    "synthesis": {
+      "ran": true,
+      "text": "The computed checks confirm that sample identifiers match between files, aligning the data for analysis; however, this alone does not establish biological pairing, which is crucial for accurate differential expression analysis. Metadata balance, showing one sample per condition within each cell line level, also necessitates researcher confirmation to validate biological pairing before conducting any analyses.",
+      "aggregator_model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+      "aggregator_local": true,
+      "ms": 11111,
+      "panel": [
+        "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+        "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+        "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC"
+      ],
+      "tokensIn": 704,
+      "tokensOut": 65,
+      "superseded": {
+        "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+        "text": "1. The computed checks confirm that the sample identifiers match, ensuring alignment between files, though this alone does not prove biological pairing and is insufficient for differential expression analysis.\n2. While the study meets the metadata balance requirement, indicating one sample per condition within each cell line level, the researcher confirmation is still required to validate the biological pairing before conducting differential expression analyses."
+      },
+      "adopted": true
+    },
+    "gen_verifier": {
+      "ran": true,
+      "judge_model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+      "judge_local": true,
+      "judge_was_racer": false,
+      "ms": 17442,
+      "ranked": [
+        {
+          "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+          "score": 80,
+          "reason": "Answers are concise and cover the main points, but do not fully explain the second check (metadata balance).",
+          "judge_model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC"
+        },
+        {
+          "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+          "score": 100,
+          "reason": "Comprehensive and accurate explanation of all checks. Best captures the essence of the problem.",
+          "judge_model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC"
+        },
+        {
+          "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+          "score": 85,
+          "reason": "Explains both checks clearly but omits the first check's implications for differential expression analysis.",
+          "judge_model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC"
+        },
+        {
+          "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+          "score": 70,
+          "reason": "Covers both checks but does not explicitly mention the need for researcher confirmation after metadata balance is verified.",
+          "judge_model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC"
+        }
+      ],
+      "best_index": 1,
+      "best": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+      "best_score": 100,
+      "parse_ok": true,
+      "reason": "ok",
+      "scale": 100,
+      "batches": 1,
+      "batches_timed_out": 0,
+      "scored_of": 4,
+      "shortlist_of": 4,
+      "abstained": 0,
+      "tokensIn": 823,
+      "tokensOut": 133,
+      "reward": {
+        "arms": 4,
+        "weight": 0.6,
+        "rewards": [
+          {
+            "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+            "reward": 0.4063
+          },
+          {
+            "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+            "reward": 0.9063
+          },
+          {
+            "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+            "reward": 0.5313
+          },
+          {
+            "model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+            "reward": 0.1563
+          }
+        ]
+      },
+      "reranked": {
+        "from": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+        "to": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+        "winner_score": 80,
+        "best_score": 100
+      },
+      "below_floor": false
+    },
+    "debate": null,
+    "quality_race": {
+      "active": true,
+      "reason": "difficulty",
+      "vote": null
+    },
+    "reasoning_scaffold": {
+      "active": false,
+      "reason": "phase_not_scaffoldable",
+      "intent": "plan",
+      "phase": "planning"
+    },
+    "app_policy": {
+      "app": "rna-evidence-agent",
+      "has_rule": true,
+      "privacy": "cloud-ok",
+      "cross_check": "auto",
+      "race_width": 6,
+      "premium_budget": null,
+      "lanes": null,
+      "requested_mode": "local",
+      "routed_mode": "local",
+      "mode_coerced": false,
+      "bound_mode": "auto"
+    },
+    "budget_degrade": null,
+    "refine": null,
+    "test_time_compute": null,
+    "hmem": null,
+    "tool_degraded": null,
+    "mcp": null,
+    "job": null,
+    "method": null,
+    "deliberation": null,
+    "egress": {
+      "destination": "none",
+      "coverage": "pattern_floor",
+      "sent": {
+        "prompt_chars": 1188,
+        "context_sources": [
+          "messages"
+        ],
+        "redacted": []
+      },
+      "withheld": [],
+      "never_eligible": []
+    },
+    "verification": null,
+    "verdict": null,
+    "bar": null,
+    "score": null,
+    "graded_weight": null,
+    "eligible": null,
+    "scorecard": null,
+    "unmet": null,
+    "optimistic": null,
+    "routing": {
+      "policy": "learned-router",
+      "width": 2,
+      "of": 2,
+      "confidence": null,
+      "reason": "single-candidate",
+      "predicted": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+      "escalated": null,
+      "winner": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+      "escalated_on_divergence": false,
+      "hedge": null,
+      "hedges_skipped": 0
+    },
+    "host_pressure": {
+      "thermal": "nominal",
+      "battery": null,
+      "pressure": {
+        "battery": {
+          "score": 0,
+          "soft": 0.3,
+          "hard": 0.5,
+          "label": "nominal",
+          "sensor": "battery%, charging"
+        },
+        "thermal": {
+          "score": 0.15,
+          "soft": 0.55,
+          "hard": 0.8,
+          "label": "nominal",
+          "sensor": "thermal API"
+        },
+        "memory": {
+          "score": 0,
+          "soft": 0.7,
+          "hard": 0.85,
+          "label": "nominal",
+          "sensor": "committed/swap"
+        },
+        "cpu": {
+          "score": 0,
+          "soft": 0.7,
+          "hard": 0.9,
+          "label": "nominal",
+          "sensor": "30s load avg"
+        },
+        "gpu": {
+          "score": 0,
+          "soft": 0.75,
+          "hard": 0.92,
+          "label": "nominal",
+          "sensor": "GPU + VRAM"
+        },
+        "network": {
+          "score": 0.1,
+          "soft": 0.5,
+          "hard": 0.85,
+          "label": "nominal",
+          "sensor": "RTT to providers"
+        },
+        "quota": {
+          "score": 0,
+          "soft": 0.8,
+          "hard": 0.95,
+          "label": "nominal",
+          "sensor": "per-key window"
+        }
+      }
+    },
+    "error": "",
+    "summary": "ok \u00b7 Qwen 2.5 3B (this device) \u00b7 miss \u00b7 $0.0051 saved"
+  }
+}

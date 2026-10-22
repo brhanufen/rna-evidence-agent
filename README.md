@@ -24,7 +24,7 @@ Use Python 3.11+ and Node 24 with TypeScript transformation support. Install the
 
 - `HMEM_REFERENCE`: path to the pinned `engines/hmem/reference` directory.
 - `RNA_NODE`: Node executable, if it is not on PATH.
-- Codex CLI: installed and signed in for the default local-demo backend. It uses your account limits.
+- Nightshift runtime: required for the default backend, with a real runtime token. Codex remains an explicitly selected historical-demo option.
 - `ANTHROPIC_API_KEY`: optional; used only with `--backend anthropic`. Never commit it.
 
 The existing agent's `host.llm` backend requires a host-provided callable; it is not automatically available in an ordinary Python process. This build does not pretend otherwise.
@@ -49,7 +49,7 @@ Full local demonstration artifacts are ignored by Git under `runs/`; sanitized r
 
 ## Submission status
 
-Not submitted. The repository and media are public at https://github.com/brhanufen/rna-evidence-agent. Final entry review remains pending. The six-slide pitch is complete and visually reviewed. The current 152-second decision walkthrough is in `deliverables/`; it is not a screen recording or fresh live run. Cursor's recorded-viewer contribution is saved in `cursor_contribution.json`. Sixteen focused regression tests now pass; these do not establish agent reliability.
+The earlier entry was submitted on October 22. The Nightshift revision below adds the bounded explanation feature. Updating source files does not update the submitted entry automatically. Prior software checks and historical Codex examples do not validate the new Nightshift code.
 
 ## Install locally
 
@@ -101,7 +101,7 @@ The first full export contained 21,833 gene rows and 8 metadata rows. Every iden
 
 ## Codex local backend
 
-The default backend calls the installed `codex exec` with a read-only sandbox, temporary session, and a JSON output schema. It requests only the next analysis script or final answer. The existing RNA agent executes the script and feeds its output into the next model call. The adapter does not read or copy authentication credentials. It uses the operator's existing Codex login and usage limits; judges would need their own authorized login. This is a local demonstration option, not a shared hosted API credential.
+The optional `--backend codex` backend calls the installed `codex exec` with a read-only sandbox, temporary session, and a JSON output schema. It requests only the next analysis script or final answer. The existing RNA agent executes the script and feeds its output into the next model call. The adapter does not read or copy authentication credentials. It uses the operator's existing Codex login and usage limits; judges would need their own authorized login. This is a local demonstration option, not a shared hosted API credential.
 
 Official interface documentation: https://learn.chatgpt.com/docs/non-interactive-mode
 
@@ -148,13 +148,86 @@ Machine-readable recorded results are committed in `output_examples/design_cases
 
 ## Current submission materials
 
-The revised decision-focused materials are `deliverables/revised-pitch/RNA_Evidence_Agent_Decision_Pitch.pptx` and `deliverables/revised-demo/RNA_Evidence_Agent_Decision_Demo.mp4` (about 2 minutes 32 seconds). They supersede the earlier pitch and generic recorded walkthrough. The new video shows rendered computed reports and a quoted earlier model response; it is not a screen recording or new live execution. A human audio listening review is still pending. The remote draft has been updated with the revised video, deck and repository link; it has not been submitted.
+The current local revision uses the seven-slide `deliverables/nightshift-pitch/RNA_Evidence_Agent_Nightshift_Pitch.pptx` and teacher-paced Nightshift video. They show saved computed reports and a recorded Nightshift explanation, not a fresh live screen capture. Earlier decision media remains historical.
 
 The source bundle contains the agent and verification code; media assets are separate deliverables. No measured time savings, statistical accuracy advantage or general agent reliability score is claimed.
 
 ## Submission media
 
-- [Decision walkthrough video](deliverables/revised-demo/RNA_Evidence_Agent_Decision_Demo.mp4)
-- [Decision-focused pitch deck](deliverables/revised-pitch/RNA_Evidence_Agent_Decision_Pitch.pptx)
+- [Nightshift decision walkthrough](deliverables/nightshift-demo-teaching/RNA_Evidence_Agent_Nightshift_Demo_Teaching.mp4)
+- [Nightshift pitch deck](deliverables/nightshift-pitch/RNA_Evidence_Agent_Nightshift_Pitch.pptx)
 
 The video is a narrated playback of computed reports and an earlier recorded model response. It is not a screen recording or a fresh live model execution. The six slide renders are included beside the deck.
+
+
+## Nightshift integration
+
+The CLI now defaults to `--backend nightshift`. The adapter uses the official
+OpenAI-compatible provider contract, a 180-second timeout, authenticated model
+discovery, and `meterless-app: rna-evidence-agent` / `meterless-scope: user` headers.
+It does not fall back to another provider. Configure `METERLESS_BASE_URL`
+(default `http://127.0.0.1:8088/v1`), `METERLESS_RUNTIME_TOKEN`, and optionally
+`METERLESS_MODEL` (default `meterless/auto`) securely in your environment.
+Never paste or commit the token. The runtime creates it in its state directory's
+`proxy-token` file. Remote endpoints require HTTPS.
+
+Use the existing live command with `--backend nightshift` instead of
+`--backend codex`. The response's reported model, requested routing mode,
+request/response hashes, and usage are retained in the evidence manifest.
+A reported model identifier is provider metadata, not independent attestation.
+
+**Current verification boundary:** the bounded design-explanation feature completed
+with local Qwen 2.5 3B and a retained provider receipt. Full code-execution-loop
+attempts fail with Nightshift's system-prompt ordering error. Earlier short
+responses from smaller models contained inaccuracies or invalid actions and are
+not treated as analysis evidence. Empty execution requests are rejected.
+The recorded examples do not establish general reliability or prize eligibility.
+
+Provider contract: https://github.com/Meterless/Meterless/blob/main/docs/agent-ready/add-meterless-provider.md
+
+### Bounded Nightshift explanation mode
+
+`--review-pairing --explain-review` computes the design checks first, then asks
+Nightshift to explain them. Set `METERLESS_TOKEN_FILE` to the runtime's existing
+local token file, or provide `METERLESS_RUNTIME_TOKEN` securely in the environment.
+The token is never written to run artifacts. `METERLESS_MODEL=meterless/local`
+requests local processing. The resulting `nightshift_explanation.json` records
+the reported model, provider receipt, usage and hashes. Its prose is explicitly
+unreviewed and cannot override the deterministic decision or authorize analysis.
+Without `--explain-review`, design review remains entirely deterministic.
+
+The active runtime routed a short request to Qwen 2.5 3B. Full analysis-loop
+requests still fail with the provider's system-prompt ordering error. Changing
+the adapter to a single user message did not resolve that error. No successful
+full Nightshift-driven code-execution loop is claimed. Existing Codex examples
+remain historical examples rather than evidence of Nightshift execution.
+
+
+### Recorded Nightshift feature result
+
+`runs/nightshift_design_01` completed the bounded design-explanation workflow
+with Qwen 2.5 3B through the local Nightshift provider. Its receipt reports
+local-only processing. The saved response preserves the need for researcher
+confirmation and does not claim a treatment effect. The public example
+`output_examples/nightshift_design_01.json` includes the response and receipt.
+The viewer renders it separately from historical Codex runs. Provider-reported
+consensus and scores are not independent scientific validation; multiple lanes
+in this receipt use the same model. No measured reliability or cost advantage
+is claimed. Full agent-loop failures remain documented. These additions require a separate upload to update the submitted entry.
+
+
+Reproduce the bounded feature on your own authorized runtime:
+
+```sh
+export METERLESS_TOKEN_FILE="PATH/TO/YOUR/runtime-token"
+export METERLESS_MODEL=meterless/local
+python run_live.py --review-pairing --explain-review \
+  --baseline PATH/TO/rnaseq-agent \
+  --counts PATH/expression_counts.csv --metadata PATH/sample_metadata.csv \
+  --run-dir runs/new-nightshift-design \
+  --question "Explain why pairing needs researcher confirmation."
+```
+
+Keep Nightshift open with a local model active. The baseline argument is retained
+for CLI compatibility; deterministic design review plus explanation does not
+load the baseline agent loop. Use a fresh output directory for each run.

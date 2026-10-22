@@ -1,0 +1,17 @@
+{
+  "status": "bounded design-explanation feature completed; full analysis loop unsupported",
+  "runtime": "Nightshift M1-M4 0.92.1",
+  "connection": "authenticated local endpoint",
+  "observed_model": "webllm/Qwen2.5-1.5B-Instruct-q4f16_1-MLC",
+  "short_request": "completed; response contained scientific inaccuracies; not used as analysis evidence",
+  "full_agent_prompt": "provider system-prompt ordering error persists",
+  "structured_short_request": "returned run_python with empty code; adapter now rejects empty execution requests",
+  "cloud_fallback": false,
+  "submission_updated": false,
+  "latest_full_workflow": "nightshift_live_03: HTTP 502 provider_error",
+  "latest_short_request_model": "webllm/SmolLM2-1.7B-Instruct-q4f16_1-MLC",
+  "latest_short_request": "valid Ready JSON; not an analysis result",
+  "latest_feature": "nightshift_design_01",
+  "latest_feature_model": "webllm/Qwen2.5-3B-Instruct-q4f16_1-MLC",
+  "receipt_id": "rcpt_req_ewheo8vw"
+}
