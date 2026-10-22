@@ -49,7 +49,7 @@ Full local demonstration artifacts are ignored by Git under `runs/`; sanitized r
 
 ## Submission status
 
-Not submitted. The public runnable repository, hosted media links and final entry review remain outstanding. The six-slide pitch is complete and visually reviewed. A 145-second narrated walkthrough of recorded artifacts is in `deliverables/`; it is not a screen recording or fresh live run. Cursor's recorded-viewer contribution is saved in `cursor_contribution.json`. Sixteen focused regression tests now pass; these do not establish agent reliability.
+Not submitted. The repository and media are public at https://github.com/brhanufen/rna-evidence-agent. Final entry review remains pending. The six-slide pitch is complete and visually reviewed. The current 152-second decision walkthrough is in `deliverables/`; it is not a screen recording or fresh live run. Cursor's recorded-viewer contribution is saved in `cursor_contribution.json`. Sixteen focused regression tests now pass; these do not establish agent reliability.
 
 ## Install locally
 
@@ -148,7 +148,7 @@ Machine-readable recorded results are committed in `output_examples/design_cases
 
 ## Current submission materials
 
-The revised decision-focused materials are `deliverables/revised-pitch/RNA_Evidence_Agent_Decision_Pitch.pptx` and `deliverables/revised-demo/RNA_Evidence_Agent_Decision_Demo.mp4` (about 2 minutes 32 seconds). They supersede the earlier pitch and generic recorded walkthrough. The new video shows rendered computed reports and a quoted earlier model response; it is not a screen recording or new live execution. A human audio listening review is still pending. The remote draft still has the old video and has not been submitted.
+The revised decision-focused materials are `deliverables/revised-pitch/RNA_Evidence_Agent_Decision_Pitch.pptx` and `deliverables/revised-demo/RNA_Evidence_Agent_Decision_Demo.mp4` (about 2 minutes 32 seconds). They supersede the earlier pitch and generic recorded walkthrough. The new video shows rendered computed reports and a quoted earlier model response; it is not a screen recording or new live execution. A human audio listening review is still pending. The remote draft has been updated with the revised video, deck and repository link; it has not been submitted.
 
 The source bundle contains the agent and verification code; media assets are separate deliverables. No measured time savings, statistical accuracy advantage or general agent reliability score is claimed.
 

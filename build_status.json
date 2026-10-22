@@ -3,8 +3,8 @@
   "evidence": "34 registered claim references matched successful Python stdout across three live examples. This is traceability, not a reliability benchmark.",
   "memory": "Persistent run pointers stored through Meterless H-MEM. Repeated inventory question retrieved its prior run pointer (one match); broader paraphrase recall is not established.",
   "data_platform": "RNA_EVIDENCE_2026 counts and metadata REST tables registered. Full export contains 21,833 genes and 8 samples; all source cell values match the originals.",
-  "next": "Review revised video audio and deck, replace old draft assets, then publish after GitHub sign-in.",
-  "submission": "Not submitted. Existing draft contains the superseded video; replace only after revised media review.",
+  "next": "Final user media review and submission.",
+  "submission": "Revised description, repository link, video and deck entered in remote draft. Not submitted.",
   "input_inventory": "21,833 genes and 8 samples; count values and exact metadata identifier match checked in an application inventory run.",
   "model_backend": "Codex CLI existing ChatGPT sign-in works. No additional API key used.",
   "interface": "Local dashboard server runs on port 8787. Browser access was blocked; no alternate browser route attempted.",
@@ -16,5 +16,6 @@
   "presentation": "Revised decision-focused six-slide PPTX rendered, inspected, and validated; prior live deck remains an older version.",
   "video": "Revised decision demo completed: 151.78 seconds, full decode passed, visual panels inspected. Not a screen recording or fresh live model run. Human audio listening pending.",
   "verification": "16 focused tests pass. Installed 0.2 CLI design workflow passed outside source checkout without model access.",
-  "design_workflow": "Paired-design CLI gate and viewer added. Original and row-reordered inputs ask for confirmation; deliberate mismatched ID blocks; unbalanced factor requests review. No new model calls in these controls."
+  "design_workflow": "Paired-design CLI gate and viewer added. Original and row-reordered inputs ask for confirmation; deliberate mismatched ID blocks; unbalanced factor requests review. No new model calls in these controls.",
+  "repository": "Published: https://github.com/brhanufen/rna-evidence-agent; Brhanu Fentaw Znabu is the commit author; no added co-author."
 }

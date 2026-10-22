@@ -28,8 +28,7 @@
     }
   ],
   "blockers": [
-    "GitHub sign-in required to publish source and hosted media links",
-    "Final video listening review",
+    "Final user audio/media review",
     "Full live clean-machine execution and browser UI appearance not established"
   ],
   "limitations": [
@@ -39,7 +38,7 @@
     "Live Python executor is not a security sandbox",
     "No NVIDIA integration claimed"
   ],
-  "decision": "Revised media ready for user review; not submitted",
+  "decision": "Required draft fields filled; not submitted",
   "packaging": {
     "wheel_built": true,
     "bridge_in_wheel": true,
