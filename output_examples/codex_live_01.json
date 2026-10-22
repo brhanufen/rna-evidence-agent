@@ -1,0 +1,116 @@
+{
+  "run": "codex_live_01",
+  "backend": "Codex CLI using operator ChatGPT sign-in",
+  "summary": {
+    "run": "codex_live_01",
+    "steps": 3,
+    "errors": 0,
+    "seconds": 59.9,
+    "registered_claims": 13,
+    "unsupported_references": 0,
+    "stop_reason": "end_turn"
+  },
+  "answer": "The count matrix contains 21,833 genes (all GeneIDs unique and nonmissing) and 8 samples. Metadata contains 8 samples: 4 control and 4 treated.\n\nSample identifiers are unique in both inputs and match exactly, including order, with no unmatched identifiers.\n\nMethod: counted gene rows, sample columns, and metadata records by group; compared raw identifiers without normalization. This was input inventory only.\n\nEvidence: [claims.json](claims.json), with exact stdout excerpts and zero-based execution step indexes.",
+  "claim_review": {
+    "claims": [
+      {
+        "claim": "Gene rows in the count matrix.",
+        "step": 1,
+        "stdout_excerpt": "GENE_ROWS: 21833",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Unique nonmissing GeneID values in the count matrix.",
+        "step": 1,
+        "stdout_excerpt": "UNIQUE_GENE_IDS: 21833",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Missing GeneID values in the count matrix.",
+        "step": 1,
+        "stdout_excerpt": "MISSING_GENE_IDS: 0",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Sample columns in the count matrix.",
+        "step": 1,
+        "stdout_excerpt": "COUNT_MATRIX_SAMPLES: 8",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Sample records in the metadata.",
+        "step": 1,
+        "stdout_excerpt": "METADATA_SAMPLES: 8",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Metadata samples in group 'control'.",
+        "step": 1,
+        "stdout_excerpt": "SAMPLES_PER_GROUP \"control\": 4",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Metadata samples in group 'treated'.",
+        "step": 1,
+        "stdout_excerpt": "SAMPLES_PER_GROUP \"treated\": 4",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Count matrix sample identifiers are unique.",
+        "step": 1,
+        "stdout_excerpt": "COUNT_SAMPLE_IDS_UNIQUE: True",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Metadata sample identifiers are unique.",
+        "step": 1,
+        "stdout_excerpt": "METADATA_SAMPLE_IDS_UNIQUE: True",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Sample identifier sets match exactly without trimming or case normalization.",
+        "step": 1,
+        "stdout_excerpt": "SAMPLE_ID_SETS_MATCH_EXACTLY: True",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Sample identifiers match exactly in the same order.",
+        "step": 1,
+        "stdout_excerpt": "SAMPLE_IDS_MATCH_IN_ORDER: True",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Count matrix sample identifiers absent from metadata.",
+        "step": 1,
+        "stdout_excerpt": "COUNT_ONLY_SAMPLE_IDS: []",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Metadata sample identifiers absent from the count matrix.",
+        "step": 1,
+        "stdout_excerpt": "METADATA_ONLY_SAMPLE_IDS: []",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      }
+    ],
+    "claim_count": 13,
+    "unsupported_count": 0,
+    "coverage": "Only explicitly registered claims are checked; free-text answer coverage is unknown",
+    "scientific_correctness": "Not established by matching printed output",
+    "status": "references-linked; method review still required"
+  },
+  "scope": "One-off public-data demonstration; not a benchmark",
+  "source": "Zetaris-exported GSE52778 RNA count matrix and metadata; pre-existing dataset declared"
+}

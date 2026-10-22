@@ -1,0 +1,20 @@
+{
+  "analysis_engine": "Three live Codex-backed examples completed: input inventory, raw-depth QC with chart, and paired-design clarification.",
+  "evidence": "34 registered claim references matched successful Python stdout across three live examples. This is traceability, not a reliability benchmark.",
+  "memory": "Persistent run pointers stored through Meterless H-MEM. Repeated inventory question retrieved its prior run pointer (one match); broader paraphrase recall is not established.",
+  "data_platform": "RNA_EVIDENCE_2026 counts and metadata REST tables registered. Full export contains 21,833 genes and 8 samples; all source cell values match the originals.",
+  "next": "Review revised video audio and deck, replace old draft assets, then publish after GitHub sign-in.",
+  "submission": "Not submitted. Existing draft contains the superseded video; replace only after revised media review.",
+  "input_inventory": "21,833 genes and 8 samples; count values and exact metadata identifier match checked in an application inventory run.",
+  "model_backend": "Codex CLI existing ChatGPT sign-in works. No additional API key used.",
+  "interface": "Local dashboard server runs on port 8787. Browser access was blocked; no alternate browser route attempted.",
+  "offline_examples": "Three deterministic sample operations completed with structured outputs and JSONL traces. Synthetic data; no model or sponsor calls in sample mode.",
+  "container": "Offline sample image built successfully and inventory example ran as nonroot with networking disabled. Live model image not built.",
+  "recovery": "QC run retained two errors and recovered; other two runs had no execution errors.",
+  "environment": "Dedicated .venv installed with analysis dependencies, including matplotlib. Versions saved in environment.json.",
+  "cursor": "Cursor desktop contribution verified in saved server.py: recorded viewer title, removed unused status read, and navigation anchors for three runs. User supplied completion screenshot.",
+  "presentation": "Revised decision-focused six-slide PPTX rendered, inspected, and validated; prior live deck remains an older version.",
+  "video": "Revised decision demo completed: 151.78 seconds, full decode passed, visual panels inspected. Not a screen recording or fresh live model run. Human audio listening pending.",
+  "verification": "16 focused tests pass. Installed 0.2 CLI design workflow passed outside source checkout without model access.",
+  "design_workflow": "Paired-design CLI gate and viewer added. Original and row-reordered inputs ask for confirmation; deliberate mismatched ID blocks; unbalanced factor requests review. No new model calls in these controls."
+}

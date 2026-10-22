@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "rna-evidence-agent"
+version = "0.2.0"
+requires-python = ">=3.11"
+description = "Dataset-scoped evidence memory around a declared RNA-seq agent baseline"
+[project.optional-dependencies]
+analysis = ["pandas>=2", "numpy>=1.26", "scipy>=1.11", "matplotlib>=3.8"]
+anthropic = ["anthropic>=0.40"]
+[project.scripts]
+rna-evidence-agent = "rna_evidence_agent.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+rna_evidence_agent = ["bridge/*.ts"]

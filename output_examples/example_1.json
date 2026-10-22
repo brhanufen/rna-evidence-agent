@@ -1,0 +1,18 @@
+{
+  "run_id": "example-1",
+  "status": "success",
+  "mode": "offline-deterministic-sample",
+  "output": {
+    "genes": 4,
+    "samples": 4,
+    "dataset_sha256": "fe08102fc3185ee4e11fdf5c2850a802f75fffecaa4160eef3b6c63f34fb180b",
+    "data_kind": "synthetic",
+    "model_used": false,
+    "sponsor_services_used": false
+  },
+  "artifacts": [
+    "runs/example-1/inventory.json"
+  ],
+  "log_file": "logs/trace-example-1.jsonl",
+  "execution_time_seconds": 0.0011
+}

@@ -1,0 +1,9 @@
+{
+  "video": "RNA_Evidence_Agent_Decision_Demo.mp4",
+  "seconds_narration": 151.76,
+  "format": "Narrated playback of computed JSON report panels and slides, not a screen capture or fresh live run",
+  "voice": "macOS system speech synthesis",
+  "controlled_cases": "original, mismatched ID, reversed rows, unbalanced pairing",
+  "model_run": "Earlier codex_live_03; no new model execution in controlled cases",
+  "full_decode": "passed"
+}

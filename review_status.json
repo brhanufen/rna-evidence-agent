@@ -1,0 +1,72 @@
+{
+  "review_date": "2026-10-22",
+  "unit_tests": {
+    "passed": 16,
+    "scope": "Input validation and explicit evidence-reference handling only"
+  },
+  "recorded_run_checks": [
+    {
+      "run": "codex_live_01",
+      "transcript_hash_matches": true,
+      "claims": 13,
+      "unsupported": 0,
+      "stop_reason": "end_turn"
+    },
+    {
+      "run": "codex_live_02",
+      "transcript_hash_matches": true,
+      "claims": 12,
+      "unsupported": 0,
+      "stop_reason": "end_turn"
+    },
+    {
+      "run": "codex_live_03",
+      "transcript_hash_matches": true,
+      "claims": 9,
+      "unsupported": 0,
+      "stop_reason": "end_turn"
+    }
+  ],
+  "blockers": [
+    "GitHub sign-in required to publish source and hosted media links",
+    "Final video listening review",
+    "Full live clean-machine execution and browser UI appearance not established"
+  ],
+  "limitations": [
+    "Three selected one-off runs are not a held-out benchmark",
+    "Reference linkage does not validate methods or complete answer coverage",
+    "Memory reference uses hash embeddings",
+    "Live Python executor is not a security sandbox",
+    "No NVIDIA integration claimed"
+  ],
+  "decision": "Revised media ready for user review; not submitted",
+  "packaging": {
+    "wheel_built": true,
+    "bridge_in_wheel": true,
+    "fresh_venv_install_and_cli_help": true,
+    "all_three_offline_examples": "passed in isolated source copy",
+    "full_live_clean_machine_run": "not established",
+    "installed_0_2_design_cli": "passed outside source checkout; four apparent pairs; no model calls"
+  },
+  "slides": "Revised six-slide native-table PPTX: all slides inspected; layout, package and first-party reimport validation passed",
+  "source_bundle": {
+    "file": "deliverables/RNA_Evidence_Agent_Source.zip",
+    "files": 43,
+    "checksums": "deliverables/checksums.json"
+  },
+  "video": {
+    "file": "deliverables/revised-demo/RNA_Evidence_Agent_Decision_Demo.mp4",
+    "seconds": 151.78,
+    "complete_decode": "passed",
+    "visual_review": "all distinct report panels and slides inspected",
+    "audio": "Synthetic narration; human listening review pending",
+    "format": "Narrated computed-report playback, not screen capture or fresh model execution"
+  },
+  "design_cases": {
+    "original": "needs-researcher-confirmation",
+    "mismatched_id": "blocked-input-alignment",
+    "row_order_changed": "needs-researcher-confirmation",
+    "unbalanced_pairing": "needs-design-review",
+    "scope": "Deterministic checks, not agent benchmark trials"
+  }
+}

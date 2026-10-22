@@ -1,0 +1,12 @@
+# Offline sample only. This is not the live model/sponsor-service image.
+FROM python:3.12-slim@sha256:cb33f7f771ecec2ef1225cf39b159591a040391bd73e4c01f00fdfc4c47611d2
+WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+COPY src/ src/
+COPY data/sample/ data/sample/
+COPY run.py run.py
+COPY input_examples/ input_examples/
+RUN useradd --create-home runner && mkdir -p /app/runs /app/logs && chown -R runner:runner /app
+USER runner
+ENTRYPOINT ["python", "run.py"]
+CMD ["--input", "input_examples/example_1.json"]

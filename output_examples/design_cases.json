@@ -1,0 +1,284 @@
+{
+  "kind": "controlled deterministic scenarios, not autonomous-agent reliability evaluation",
+  "source": "Checked public GSE52778 export through Zetaris",
+  "new_model_calls": 0,
+  "scenarios": {
+    "original": {
+      "kind": "deterministic-design-review",
+      "dataset_sha256": "dd9a74a68083b723f691e74cfc22c4a74d8aa495b61748574db9afa21210031d",
+      "model_used": false,
+      "differential_expression_run": false,
+      "factor": "cell_line",
+      "group_column": "group",
+      "contrast": [
+        "treated",
+        "control"
+      ],
+      "decision_trace": [
+        {
+          "check": "exact sample identifier match",
+          "result": "passed",
+          "evidence": {
+            "samples": 8,
+            "sample_id_column": "gsm"
+          }
+        },
+        {
+          "check": "one sample per condition within each factor level",
+          "result": "passed",
+          "evidence": [
+            {
+              "cell_line": "N052611",
+              "control_samples": 1,
+              "treated_samples": 1,
+              "complete_pair": true
+            },
+            {
+              "cell_line": "N061011",
+              "control_samples": 1,
+              "treated_samples": 1,
+              "complete_pair": true
+            },
+            {
+              "cell_line": "N080611",
+              "control_samples": 1,
+              "treated_samples": 1,
+              "complete_pair": true
+            },
+            {
+              "cell_line": "N61311",
+              "control_samples": 1,
+              "treated_samples": 1,
+              "complete_pair": true
+            }
+          ]
+        },
+        {
+          "check": "biological pairing confirmed by researcher",
+          "result": "pending",
+          "consequence": "Metadata structure alone does not establish biological pairing. Do not fit differential expression yet."
+        }
+      ],
+      "pairs": [
+        {
+          "cell_line": "N052611",
+          "control_samples": 1,
+          "treated_samples": 1,
+          "complete_pair": true
+        },
+        {
+          "cell_line": "N061011",
+          "control_samples": 1,
+          "treated_samples": 1,
+          "complete_pair": true
+        },
+        {
+          "cell_line": "N080611",
+          "control_samples": 1,
+          "treated_samples": 1,
+          "complete_pair": true
+        },
+        {
+          "cell_line": "N61311",
+          "control_samples": 1,
+          "treated_samples": 1,
+          "complete_pair": true
+        }
+      ],
+      "candidate_design": "~ cell_line + group",
+      "alternative": "An unpaired model omits the matching factor; it may ignore within-unit dependence. No performance difference has been estimated here.",
+      "question": "Does cell_line identify the same biological experimental unit measured in both conditions, with no unresolved confounding?",
+      "status": "needs-researcher-confirmation"
+    },
+    "mismatched_id": {
+      "kind": "deterministic-design-review",
+      "dataset_sha256": "7bd518f2fe040e067500db0f4be14f1378a05dec28208eabfaf3ce178d1090e1",
+      "model_used": false,
+      "differential_expression_run": false,
+      "factor": "cell_line",
+      "group_column": "group",
+      "contrast": [
+        "treated",
+        "control"
+      ],
+      "decision_trace": [
+        {
+          "check": "exact sample identifier match",
+          "result": "failed",
+          "consequence": "Stop before proposing or fitting an analysis; do not join by row position."
+        }
+      ],
+      "status": "blocked-input-alignment",
+      "reason": "No unique exact sample-ID column in metadata"
+    },
+    "row_order_changed": {
+      "kind": "deterministic-design-review",
+      "dataset_sha256": "b48ac96da2f4060245c33502e3bab0bb73d130e5e62fd5e623c609e69d961638",
+      "model_used": false,
+      "differential_expression_run": false,
+      "factor": "cell_line",
+      "group_column": "group",
+      "contrast": [
+        "treated",
+        "control"
+      ],
+      "decision_trace": [
+        {
+          "check": "exact sample identifier match",
+          "result": "passed",
+          "evidence": {
+            "samples": 8,
+            "sample_id_column": "gsm"
+          }
+        },
+        {
+          "check": "one sample per condition within each factor level",
+          "result": "passed",
+          "evidence": [
+            {
+              "cell_line": "N052611",
+              "control_samples": 1,
+              "treated_samples": 1,
+              "complete_pair": true
+            },
+            {
+              "cell_line": "N061011",
+              "control_samples": 1,
+              "treated_samples": 1,
+              "complete_pair": true
+            },
+            {
+              "cell_line": "N080611",
+              "control_samples": 1,
+              "treated_samples": 1,
+              "complete_pair": true
+            },
+            {
+              "cell_line": "N61311",
+              "control_samples": 1,
+              "treated_samples": 1,
+              "complete_pair": true
+            }
+          ]
+        },
+        {
+          "check": "biological pairing confirmed by researcher",
+          "result": "pending",
+          "consequence": "Metadata structure alone does not establish biological pairing. Do not fit differential expression yet."
+        }
+      ],
+      "pairs": [
+        {
+          "cell_line": "N052611",
+          "control_samples": 1,
+          "treated_samples": 1,
+          "complete_pair": true
+        },
+        {
+          "cell_line": "N061011",
+          "control_samples": 1,
+          "treated_samples": 1,
+          "complete_pair": true
+        },
+        {
+          "cell_line": "N080611",
+          "control_samples": 1,
+          "treated_samples": 1,
+          "complete_pair": true
+        },
+        {
+          "cell_line": "N61311",
+          "control_samples": 1,
+          "treated_samples": 1,
+          "complete_pair": true
+        }
+      ],
+      "candidate_design": "~ cell_line + group",
+      "alternative": "An unpaired model omits the matching factor; it may ignore within-unit dependence. No performance difference has been estimated here.",
+      "question": "Does cell_line identify the same biological experimental unit measured in both conditions, with no unresolved confounding?",
+      "status": "needs-researcher-confirmation"
+    },
+    "unbalanced_pairing": {
+      "kind": "deterministic-design-review",
+      "dataset_sha256": "186403f5c682883198a4f44904d25f2759a65493960461b88ce52b7852397cb8",
+      "model_used": false,
+      "differential_expression_run": false,
+      "factor": "cell_line",
+      "group_column": "group",
+      "contrast": [
+        "treated",
+        "control"
+      ],
+      "decision_trace": [
+        {
+          "check": "exact sample identifier match",
+          "result": "passed",
+          "evidence": {
+            "samples": 8,
+            "sample_id_column": "gsm"
+          }
+        },
+        {
+          "check": "one sample per condition within each factor level",
+          "result": "failed",
+          "evidence": [
+            {
+              "cell_line": "N052611",
+              "control_samples": 1,
+              "treated_samples": 1,
+              "complete_pair": true
+            },
+            {
+              "cell_line": "N061011",
+              "control_samples": 1,
+              "treated_samples": 0,
+              "complete_pair": false
+            },
+            {
+              "cell_line": "N080611",
+              "control_samples": 1,
+              "treated_samples": 1,
+              "complete_pair": true
+            },
+            {
+              "cell_line": "N61311",
+              "control_samples": 1,
+              "treated_samples": 2,
+              "complete_pair": false
+            }
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "cell_line": "N052611",
+          "control_samples": 1,
+          "treated_samples": 1,
+          "complete_pair": true
+        },
+        {
+          "cell_line": "N061011",
+          "control_samples": 1,
+          "treated_samples": 0,
+          "complete_pair": false
+        },
+        {
+          "cell_line": "N080611",
+          "control_samples": 1,
+          "treated_samples": 1,
+          "complete_pair": true
+        },
+        {
+          "cell_line": "N61311",
+          "control_samples": 1,
+          "treated_samples": 2,
+          "complete_pair": false
+        }
+      ],
+      "status": "needs-design-review",
+      "reason": "Not enough complete one-to-one pairs for this simple candidate design"
+    }
+  },
+  "controls": "Only original uses unchanged metadata. Other cases are deliberately modified inputs, explicitly labeled.",
+  "biological_confirmation": "Not provided; no differential expression executed."
+}

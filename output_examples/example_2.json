@@ -1,0 +1,20 @@
+{
+  "run_id": "example-2",
+  "status": "success",
+  "mode": "offline-deterministic-sample",
+  "output": {
+    "samples_per_group": {
+      "control": 2,
+      "treated": 2
+    },
+    "method": "Exact metadata row counts, after sample-ID match",
+    "data_kind": "synthetic",
+    "model_used": false,
+    "sponsor_services_used": false
+  },
+  "artifacts": [
+    "runs/example-2/inventory.json"
+  ],
+  "log_file": "logs/trace-example-2.jsonl",
+  "execution_time_seconds": 0.001
+}

@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+state/
+runs/
+logs/
+.git/
+.venv/
+__pycache__/
+*.png

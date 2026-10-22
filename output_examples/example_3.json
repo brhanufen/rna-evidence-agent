@@ -1,0 +1,19 @@
+{
+  "run_id": "example-3",
+  "status": "success",
+  "mode": "offline-deterministic-sample",
+  "output": {
+    "claim": "These data prove treatment is clinically effective.",
+    "decision": "unsupported",
+    "reason": "Synthetic count data and group labels cannot establish clinical effectiveness or a causal effect.",
+    "scope": "This is a fixed demonstration guardrail, not a general claim classifier or LLM review",
+    "data_kind": "synthetic",
+    "model_used": false,
+    "sponsor_services_used": false
+  },
+  "artifacts": [
+    "runs/example-3/inventory.json"
+  ],
+  "log_file": "logs/trace-example-3.jsonl",
+  "execution_time_seconds": 0.0011
+}

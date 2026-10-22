@@ -1,0 +1,109 @@
+{
+  "run": "codex_live_02",
+  "backend": "Codex CLI using operator ChatGPT sign-in",
+  "summary": {
+    "run": "codex_live_02",
+    "steps": 5,
+    "errors": 2,
+    "seconds": 166.14,
+    "registered_claims": 12,
+    "unsupported_references": 0,
+    "stop_reason": "end_turn"
+  },
+  "answer": "Raw library sizes across all 21,833 genes:\n\n| Sample | Total counts |\n|---|---:|\n| GSM1275862 | 20,990,785 |\n| GSM1275863 | 19,195,984 |\n| GSM1275866 | 26,052,155 |\n| GSM1275867 | 39,059,920 |\n| GSM1275870 | 27,514,588 |\n| GSM1275871 | 31,804,270 |\n| GSM1275874 | 31,281,474 |\n| GSM1275875 | 37,428,793 |\n\nSmallest: **GSM1275863, 19,195,984 counts**. Largest: **GSM1275867, 39,059,920 counts**. Genes with zero counts across all samples: **0**.\n\nMethod: Exact integer sums over every gene row, without filtering or differential expression.\n\nThese totals measure counts represented in the gene-count matrix, not necessarily total sequenced reads. Depth alone cannot establish read or mapping quality, contamination, library complexity, biological comparability, or differential expression.\n\nSaved: [library-size chart](library_sizes.png) and [claims.json](claims.json), containing exact stdout excerpts and zero-based step index 3 for all numerical conclusions.",
+  "claim_review": {
+    "claims": [
+      {
+        "claim": "All input genes and samples were included without filtering.",
+        "step": 3,
+        "stdout_excerpt": "INVENTORY: 21833 genes; 8 samples; no filtering or differential expression.",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "GSM1275862 has a raw library-size total of 20990785 counts.",
+        "step": 3,
+        "stdout_excerpt": "LIBRARY_SIZE: GSM1275862 = 20990785 counts",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "GSM1275863 has a raw library-size total of 19195984 counts.",
+        "step": 3,
+        "stdout_excerpt": "LIBRARY_SIZE: GSM1275863 = 19195984 counts",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "GSM1275866 has a raw library-size total of 26052155 counts.",
+        "step": 3,
+        "stdout_excerpt": "LIBRARY_SIZE: GSM1275866 = 26052155 counts",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "GSM1275867 has a raw library-size total of 39059920 counts.",
+        "step": 3,
+        "stdout_excerpt": "LIBRARY_SIZE: GSM1275867 = 39059920 counts",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "GSM1275870 has a raw library-size total of 27514588 counts.",
+        "step": 3,
+        "stdout_excerpt": "LIBRARY_SIZE: GSM1275870 = 27514588 counts",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "GSM1275871 has a raw library-size total of 31804270 counts.",
+        "step": 3,
+        "stdout_excerpt": "LIBRARY_SIZE: GSM1275871 = 31804270 counts",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "GSM1275874 has a raw library-size total of 31281474 counts.",
+        "step": 3,
+        "stdout_excerpt": "LIBRARY_SIZE: GSM1275874 = 31281474 counts",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "GSM1275875 has a raw library-size total of 37428793 counts.",
+        "step": 3,
+        "stdout_excerpt": "LIBRARY_SIZE: GSM1275875 = 37428793 counts",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "The smallest library size is 19195984 counts, in GSM1275863.",
+        "step": 3,
+        "stdout_excerpt": "SMALLEST_LIBRARY: 19195984 counts; samples: GSM1275863",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "The largest library size is 39059920 counts, in GSM1275867.",
+        "step": 3,
+        "stdout_excerpt": "LARGEST_LIBRARY: 39059920 counts; samples: GSM1275867",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "0 genes have zero counts across all samples.",
+        "step": 3,
+        "stdout_excerpt": "ALL_ZERO_GENES: 0",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      }
+    ],
+    "claim_count": 12,
+    "unsupported_count": 0,
+    "coverage": "Only explicitly registered claims are checked; free-text answer coverage is unknown",
+    "scientific_correctness": "Not established by matching printed output",
+    "status": "references-linked; method review still required"
+  },
+  "scope": "One-off public-data demonstration; not a benchmark",
+  "source": "Zetaris-exported GSE52778 RNA count matrix and metadata; pre-existing dataset declared"
+}

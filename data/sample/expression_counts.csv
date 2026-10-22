@@ -1,0 +1,5 @@
+GeneID,symbol,S1,S2,S3,S4
+gene-a,DEMO_A,10,12,30,28
+gene-b,DEMO_B,20,22,18,21
+gene-c,DEMO_C,0,1,0,1
+gene-d,DEMO_D,50,48,52,49

@@ -1,0 +1,88 @@
+{
+  "run": "codex_live_03",
+  "backend": "Codex CLI using operator ChatGPT sign-in",
+  "summary": {
+    "run": "codex_live_03",
+    "steps": 3,
+    "errors": 0,
+    "seconds": 42.6,
+    "registered_claims": 9,
+    "unsupported_references": 0,
+    "stop_reason": "end_turn"
+  },
+  "answer": "The metadata shows 4 complete cell-line pairs among 8 samples: N052611, N061011, N080611, and N61311 each have 1 control (untreated) and 1 treated (Dex) observation. No cell line lacks either condition. Pairing is inferred from cell_line; no separate biological pair identifier is supplied.\n\nMethod: cross-tabulated group within cell_line and checked for exactly one observation per condition. Results: [pairing_summary.csv](pairing_summary.csv). Numerical claims and exact stdout evidence: [claims.json](claims.json).\n\nThe statistical model determines how cell-line differences and within-line matching are handled; the contrast defines the treatment comparison and its direction. No differential-expression analysis was performed.\n\nBefore inference, please confirm that cell_line is the intended biological pairing unit, whether the target contrast is Dex versus untreated adjusted for cell_line, and which differential-expression method to use or review.",
+  "claim_review": {
+    "claims": [
+      {
+        "claim": "Metadata contains 8 samples across 4 cell lines.",
+        "step": 1,
+        "stdout_excerpt": "Metadata contains 8 samples across 4 cell lines.",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "N052611: 1 control sample and 1 treated sample.",
+        "step": 1,
+        "stdout_excerpt": "N052611: 1 control sample and 1 treated sample.",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "N061011: 1 control sample and 1 treated sample.",
+        "step": 1,
+        "stdout_excerpt": "N061011: 1 control sample and 1 treated sample.",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "N080611: 1 control sample and 1 treated sample.",
+        "step": 1,
+        "stdout_excerpt": "N080611: 1 control sample and 1 treated sample.",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "N61311: 1 control sample and 1 treated sample.",
+        "step": 1,
+        "stdout_excerpt": "N61311: 1 control sample and 1 treated sample.",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Complete cell-line pairs with exactly one control and one treated sample: 4.",
+        "step": 1,
+        "stdout_excerpt": "Complete cell-line pairs with exactly one control and one treated sample: 4.",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Cell lines without exactly one control and one treated sample: 0.",
+        "step": 1,
+        "stdout_excerpt": "Cell lines without exactly one control and one treated sample: 0.",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Total control samples: 4; total treated samples: 4.",
+        "step": 1,
+        "stdout_excerpt": "Total control samples: 4; total treated samples: 4.",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      },
+      {
+        "claim": "Additional metadata columns beyond gsm, cell_line, treatment, and group: 0.",
+        "step": 1,
+        "stdout_excerpt": "Additional metadata columns beyond gsm, cell_line, treatment, and group: 0.",
+        "status": "output-linked",
+        "method_validity": "not assessed"
+      }
+    ],
+    "claim_count": 9,
+    "unsupported_count": 0,
+    "coverage": "Only explicitly registered claims are checked; free-text answer coverage is unknown",
+    "scientific_correctness": "Not established by matching printed output",
+    "status": "references-linked; method review still required"
+  },
+  "scope": "One-off public-data demonstration; not a benchmark",
+  "source": "Zetaris-exported GSE52778 RNA count matrix and metadata; pre-existing dataset declared"
+}
